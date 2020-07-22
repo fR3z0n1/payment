@@ -1,0 +1,198 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Orbitron&family=Yellowtail&display=swap');*/
+@font-face {
+	font-family: 'Montserrat';
+	src: url('/fonts/Montserrat/Montserrat-Regular.ttf');
+}
+@font-face {
+	font-family: 'Orbitron';
+	src: url('/fonts/Orbitron/Orbitron-VariableFont_wght.ttf');
+}
+@font-face {
+	font-family: 'Yellowtail';
+	src: url('/fonts/Yellowtail/Yellowtail-Regular.ttf');
+}
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto/Roboto-Regular.ttf');
+}
+body, html { 
+	height: 100%; 
+	font-family: 'Montserrat';
+}
+
+/*Selectors form*/
+/*div.block-form { 
+	display: inline-block; 
+	position: relative; 
+	left: 50%; top: 35%; 
+	transform: translate(-50%,-50%);
+}*/
+/*form.form-payment-card { 
+	display: inline-block;
+	width: 400px;
+	min-width: 400px; 
+	padding: 30px 30px 15px 30px; 
+	border:1px solid #276ab0;
+	text-align: center; 
+}*/
+/*form.form-payment-card > input { 
+	display: block; 
+}*/
+/*form.form-payment-card > input[type=text], form.form-payment-card > textarea { 
+	width: 90%; 
+	border: 1px solid #bfbfbf; 
+	margin: 10px auto; 
+	padding: 5px 10px; 
+	color: #323232; 
+	border-radius: 3px; 
+	font-size: 12px; 
+	font-family: 'Montserrat', sans-serif;  
+}*/
+
+form.form-payment-card > textarea { 
+	border: 1px solid #bfbfbf; 
+	padding: 5px 10px; 
+	color: #323232; 
+	border-radius: 3px; 
+	font-size: 12px; 
+	font-family: 'Montserrat', sans-serif; 
+}
+form.form-payment-card input[type=text]::placeholder , form.form-payment-card textarea::placeholder { 
+	font-size: 11px; 
+	font-family: 'Orbitron', sans-serif;
+}
+form.form-payment-card > input#numCard { 
+	width: 90%
+	background: #eee; 
+	font-family: 'Orbitron', sans-serif; 
+}
+/*form.form-payment-card > input[type=submit] { 
+	width: 50%; 
+	margin-top: 15px; 
+	font-size: 12px; 
+	font-family: 'Orbitron', sans-serif;
+}
+*/
+
+form.form-payment-card input.input-3l, select.input-3l {
+	width: 50px;
+	height: 35px;
+	margin: 0 auto;
+	border: 1px solid #bfbfbf;
+}
+form.form-payment-card input.input-cvv {
+	
+}
+span.text-cvv { display: inline-block; width: 80px; font-size: 10px; color: #999; text-align: right;}
+form.form-payment-card input#number_card { 
+	width: 88%;
+	margin-bottom: 20px;
+}
+form.form-payment-card input[type=text] { display: inline-block; margin: 0 auto; margin-top: 0; padding: 5px;}
+
+h2.payment_data_caption { 
+	font-family: 'Yellowtail', cursive; 
+	font-size: 40px; 
+	color: #1e3bdb; 
+}
+p.pay_information_caption { 
+	font-size: 14px; 
+	font-family: 'Orbitron', sans-serif; 
+	text-align: left; 
+}
+
+/*Нав меню*/
+nav.menu { 
+	padding: 35px 20; 
+	background: #3068b3; 
+}
+nav.menu a { 
+	color: #f9f9f9; 
+	font-weight: 600; 
+	font-size: 18px;
+}
+h2.general-caption { 
+	padding: 10px;
+	margin-bottom: 0;
+	margin-right: 20px; 
+	border: 2px solid;
+	color: #f9f9f9; 
+	border-radius: 12px; 
+	font-size: 24px;
+}
+
+/*Главная страница*/
+p.general-note-up { 
+	margin-bottom: 30px; 
+	text-align: left; 
+	font-family: 'Montserrat'; 
+	font-size: 25pt;
+	color: #f9f9f9; 
+	text-shadow: 1px 1px 3px #323232; 
+	font-weight: 600; 
+}
+p.general-note-down { 
+	margin-bottom: 30px; 
+	font-family: 'Montserrat'; 
+	font-size: 20pt; 
+	color: #f9f9f9; 
+	text-shadow: 1px 1px 3px #323232; 
+	text-align: left; 
+}
+div.general-left-block { 
+	padding: 50px; 
+	position: relative; 
+	top: 40%; 
+	transform: translateY(-50%); 
+	margin: 0;
+}
+div.general-left-block button { margin-top: 20px; font-weight: 600; }
+div.general-left-block img { position: relative; width: 100px; left: 50%; transform: translateX(-50%); } 
+div.general-right-block div.block-img { position: absolute; left: 50%; top: 40%; transform: translate(-50%,-50%); }
+
+/*Вход в личный кабинет*/
+div.general-block-auth { width: 100%; height: 100%; text-align: center; margin-top: 50px; }
+form.form-auth { 
+	display: inline-block;
+	min-width: 320px; 
+	padding: 30px; 
+	margin-bottom: 20px;
+	border:1px solid #276ab0;
+	text-align: center;  
+}
+form.form-auth input { display: block; margin: 10px auto; padding: 5px; }
+form.form-auth input::placeholder { font-family: 'Orbitron', sans-serif; font-size: 12px; }
+h2.caption-login { margin:0 0 30px 0; color: #3e7fd5; user-select: none; }
+
+/*Личный кабинет*/
+div.top-row { height: 50px; border-bottom: 2px solid #3e7fd5; background: #e1e1e1; box-shadow: inset 0 0 20px #bfbfbf; }
+h2.caption-cabinet { display: inline-block; margin: 0; border: none; color: #3e7fd5; user-select: none; }
+.line-height-50 { line-height: 50px; } .line-height-40 { line-height: 40px; } 
+.line-height-30 { line-height: 30px; } .line-height-20 { line-height: 20px; } 
+
+img.fa-home-icon { width: 20px; }
+div.left-aside-cabinet { border-right: 2px solid #eee;}
+div.left-aside-cabinet ul { height: 100%; margin-left: 30px; padding: 30px 10px; list-style: none;}
+div.left-aside-cabinet ul a { text-decoration: none; font-weight: 700; color: #666; }
+div.left-aside-cabinet ul li { margin-top: 20px; }
+form.cabinet-form-editprofile { position: absolute; width: 350px; max-width: 350px; top: 40%; left: 50%; transform: translate(-50%,-50%); padding: 30px; border: 1px solid #37ee; border-radius: 5px; text-align: center;}
+/*form input { display: block; margin: 0 auto; margin-top: 15px; padding: 5px;}*/
+form input[type=text],input[type=tel] { border: 1px solid #bfbfbf; border-radius: 3px;}
+form.form-payment-card div.row-img-block { 
+	height: 36px;
+	text-align: right;
+	padding: 5px 20px;
+	font-weight: 700;
+	font-style: italic;
+	color: #001E90;
+}
+form.form-payment-card div.img-card { 
+	width: 350px; height: 200px;
+	border: 1px solid #bfbfbf; border-radius: 15px; box-shadow: 3px 3px 10px #bfbfbf; background: #f6f6f6; margin-bottom: 20px;
+}
+span.visa_circle { display: inline-block; width: 20px; height: 20px; border-radius: 50%; }
+span.circle1 { background: red; margin-right: -10px; }
+span.circle2 { background: orange; opacity: 80%;}
+p.info_pay { margin-bottom: 7px; }
+div.img-card div.cardholder { margin: 20px 0 0 10px; font-size: 14px; font-weight: 700;}
+form.form-payment-card input.input-sum[name=summa] { width: 100px; }
