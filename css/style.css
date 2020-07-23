@@ -26,19 +26,19 @@ body, html {
 	position: relative; 
 	left: 50%; top: 35%; 
 	transform: translate(-50%,-50%);
-}*/
-/*form.form-payment-card { 
+}
+form.form-payment-card { 
 	display: inline-block;
 	width: 400px;
 	min-width: 400px; 
 	padding: 30px 30px 15px 30px; 
 	border:1px solid #276ab0;
 	text-align: center; 
-}*/
-/*form.form-payment-card > input { 
+}
+form.form-payment-card > input { 
 	display: block; 
-}*/
-/*form.form-payment-card > input[type=text], form.form-payment-card > textarea { 
+}
+form.form-payment-card > input[type=text], form.form-payment-card > textarea { 
 	width: 90%; 
 	border: 1px solid #bfbfbf; 
 	margin: 10px auto; 
@@ -47,8 +47,8 @@ body, html {
 	border-radius: 3px; 
 	font-size: 12px; 
 	font-family: 'Montserrat', sans-serif;  
-}*/
-
+}
+*/
 form.form-payment-card > textarea { 
 	border: 1px solid #bfbfbf; 
 	padding: 5px 10px; 

@@ -19,25 +19,29 @@
 						<hr>
 						<h4>Подтверждение платежа</h4>
 						<p>Проверьте введённые данные</p>
-						
+						<? if(isset($errorBalance) && $errorBalance == TRUE) echo '<p class="alert alert-danger">Недостаточно средств для перевода</p>';?>
 					<form class="form-payment-card" method="post">
 
 						<div class="img-card">
 							<div class="row-img-block"><span class="visa_circle circle1"></span><span class="visa_circle circle2"></span>VISA</div>
 							<div class="row row-90">
-								<input id="number_card" type="text" value="<? echo $number_card;?>" disabled>
-								<input class="input-3l" type="text" value="<? echo $month;?>" disabled>
+								<input id="number_card" type="text" value="<? echo $setDataPayment['number_card'];?>" name="number_card" disabled>
+								<input class="input-3l" type="text" value="<? echo $setDataPayment['month'];?>" name="month" disabled>
 								/ 
-								<input class="input-3l" type="text" value="<? echo $year;?>" disabled>
+								<input class="input-3l" type="text" value="<? echo $setDataPayment['year'];?>" name="year" disabled>
 								<span class="text-cvv">Три цифры с обратной стороны карты</span>
-								<input type="text" placeholder="CVV" class="input-3l input-cvv" value="<? echo $cvv;?>" disabled>
+								<input type="text" placeholder="CVV" class="input-3l input-cvv" value="<? echo $setDataPayment['cvv'];?>" name="cvv" disabled>
 							</div>
-							<div class="cardholder"><? echo "$firstName $lastName" ?></div>
+							<input type="hidden" name="first_name" value="<? echo $setDataPayment['first_name'];?>">
+							<input type="hidden" name="last_name" value="<? echo $setDataPayment['last_name'];?>">
+							<div class="cardholder">
+								<? echo $setDataPayment['first_name'] . ' ' . $setDataPayment['last_name']; ?>
+							</div>
 						</div>
 						<p class="info_pay">Сумма:</p>
-						<input class="input-3l input-sum" type="text" name="summa" value="<? echo $summa;?>" disabled>
+						<input class="input-3l input-sum" type="text" name="summa" value="<? echo $setDataPayment['summa'];?>" disabled>
 						<p class="info_pay">Назначение платежа:</p>
-						<textarea name="nomination" placeholder="Не указан" disabled><? echo $nomination; ?></textarea>
+						<textarea name="nomination" placeholder="Не указан" disabled><? echo $setDataPayment['nomination']; ?></textarea>
 						
 						<input data-cvv class="btn btn-primary d-block mt-2" type="submit" value="Отправить" name="send_bd">
 						<a href="/payment/card" class="btn btn-info" style="margin-top: 10px;">Изменить данные</a>
@@ -49,18 +53,6 @@
 
 </div>
 
-<script type="text/javascript">
-	let number_card = document.getElementById('number_card');
-	let input_cvv = document.querySelector('input[data-cvv]');
-
-	console.log(input_cvv.value);
-
-	number_card.addEventListener('keypress', InputOnlyNumber);
-
-	function InputOnlyNumber() {
-		if(event.keyCode < 48 || event.keyCode > 57)
-			event.returnValue = false;
-	}
-</script>
+<script src="js/onlyNumber.js"></script>
 <script src="js/cleanInput.js"></script>
 <?php require_once( ROOT . '/views/template/footer.php' ); ?>

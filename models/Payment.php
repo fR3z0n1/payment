@@ -55,4 +55,49 @@ class Payment {
 				return false;
 		}
 	}
+
+	public static function setBalance($currentBalance, $setBalance, $user_id) {
+
+		$connect = Connection::OpenConnection();
+		$newBalance = intval($currentBalance) + intval($setBalance);
+
+		if($connect) {
+			$query = $connect->prepare('UPDATE `users` SET `balance` = :newBalance WHERE `id` = :user_id');
+			$query->bindParam(':newBalance', $newBalance, PDO::PARAM_INT);
+			$query->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+			$result = $query->execute();
+			$connect = NULL;
+
+			if($result){
+				$dataUser = unserialize($_COOKIE['dataUser']);
+				$dataUser['balance'] = $newBalance;
+				$dataUser = serialize($dataUser);
+				setcookie('dataUser', $dataUser, time() + 1800, "/");
+				return true;
+			}
+			else
+				return false;
+		} else {
+			return 'Not connection ' . mysql_error();
+		}
+	}
+	public static function getBalance($user_id) {
+		$connect = Connection::OpenConnection();
+
+		if($connect) {
+			$query = $connect->prepare('SELECT `balance` FROM `users` WHERE id = :user_id');
+			$query->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+			$query->execute();
+			$result = $query->fetch(PDO::FETCH_ASSOC);
+			$connect = NULL;
+
+			if($result){
+				return intval($result['balance']);
+			}
+			else
+				return false;
+		} else {
+			return 'Not connection ' . mysql_error();
+		}
+	}
 }

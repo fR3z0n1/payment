@@ -1,5 +1,5 @@
 <?php require_once( ROOT . '/views/template/doctype.php' ); ?>
-	<title>Перевод на VISA | MyPayment</title>
+	<title>Пополнение баланса | MyPayment</title>
 </head>
 <body>
 
@@ -18,8 +18,9 @@
 						<p class="pay_information_caption">Payment Information</p>
 						<hr>
 
-					<form action="/payment/register" class="form-payment-card" method="post">
-
+					<form action="/inc/fbalance.php" class="form-payment-card" method="post">
+					
+					<p>Данные карты, с которой произвести списание:</p>
 						<div class="img-card">
 							<div class="row-img-block"><span class="visa_circle circle1"></span><span class="visa_circle circle2"></span>VISA</div>
 							<div class="row row-90">
@@ -60,13 +61,8 @@
 						</div>
 						<p class="info_pay">Сумма:</p>
 						<input class="input-3l input-sum" data-format="number" type="text" name="summa">
-						<p class="info_pay">Данные получателя:</p>
-						<input type="text" name="first_name" id="first_name" placeholder="First name">
-						<input type="text" name="last_name" id="last_name" placeholder="Last name">
-						<p class="info_pay">Назначение платежа:</p>
-						<textarea name="nomination" placeholder="Nomination..."></textarea>
 						
-						<input data-cvv class="btn btn-primary d-block mt-2" type="submit" value="Confirm" name="submit">
+						<input class="btn btn-primary d-block mt-2" type="submit" value="Confirm" name="send_balance">
 					</form>
 				</div>
 			</div>
@@ -74,7 +70,5 @@
 		</div>
 
 </div>
-
-<script src="/js/onlyNumber.js"></script>
-<script src="js/cleanInput.js"></script>
+<script src="js/onlyNumber.js"></script>
 <?php require_once( ROOT . '/views/template/footer.php' ); ?>

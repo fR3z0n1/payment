@@ -1,13 +1,16 @@
 <?php 
 
 return array(
+    //Баланс
+    'payment/balance/success' => 'payment/balanceSuccess',
+    'payment/balance/error' => 'payment/balanceError',
+    'payment/balance' => 'payment/balance',
     //Оплаты
-    'payment/success' => 'payment/success',
-    'payment/error' => 'payment/error/$1',
+    'payment/card/success' => 'payment/paymentSuccess',
+    'payment/card/error' => 'payment/paymentError/$1',
     'payment/card/form' => 'payment/cardForm/$1',
     'payment/register' => 'payment/regPay',
     'payment/card' => 'payment/card',
-    'payment/balance' => 'payment/balance',
 	//Кабинет
 	'cabinet/home' => 'cabinet/home',
     'cabinet/edit' => 'cabinet/edit',
